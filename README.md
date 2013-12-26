@@ -9,3 +9,4 @@ cd youtube-node
 
 npm install
 
+node app.js
