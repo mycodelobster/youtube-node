@@ -1,0 +1,34 @@
+extends layout
+
+block content
+    .container
+        .row
+            .col-12
+                form(action='',method="post")
+                    input.form-control(name='keyword',value="#{keyword || ''}")
+                    br
+                    button.btn.btn-primary.btn-block Download
+                    br
+                    br
+        .row
+            if(videos)
+                for video in videos
+                    .col-12
+                        .well
+                            img.pull-left(style='margin-right:10px',src="#{video.thumbnail.sqDefault}")
+                            br
+                            p <strong>#{video.title}</strong>
+                            p=video.description
+                            a.btn.btn-primary.btn-player(href="#{video.player.default}",title='#{video.id}',target='blank') Open
+                            p
+                            .clearfix
+            else if(msg)
+                h2=msg
+            else
+                h2 Video Not Found
+                
+                
+    
+
+       
+    
